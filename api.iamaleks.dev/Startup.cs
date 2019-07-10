@@ -1,5 +1,6 @@
 namespace Api
 {
+    using Api.Areas.Services;
     using Api.Infrastructure;
 
     using Microsoft.AspNetCore.Builder;
@@ -15,6 +16,8 @@ namespace Api
         {
             services.AddControllers()
                     .AddNewtonsoftJson();
+
+            services.AddTransient<IProjectQueryProvider, ProjectQueryProvider>();
 
             services.AddRouting(options => options.LowercaseUrls = true);
             services.AddMvc(options => options.Conventions.Add(new RouteTokenTransformerConvention(new SlugifyParameterTransformer())));

@@ -1,9 +1,6 @@
 ﻿namespace Api.Areas.WingmanTool.Controllers
 {
-    using System;
-    using System.Text.RegularExpressions;
-
-    using Api.Areas.WingmanTool.Models;
+    using Api.Areas.Services;
 
     using Microsoft.AspNetCore.Mvc;
 
@@ -12,11 +9,17 @@
     [Route("[Area]/[Controller]/[Action]")]
     public class TemplateController : ControllerBase
     {
+        private readonly IProjectQueryProvider _projectQueryProvider;
+
+        public TemplateController(IProjectQueryProvider projectQueryProvider)
+        {
+            _projectQueryProvider = projectQueryProvider;
+        }
+
         [HttpGet("{projectType}")]
         public bool IsSupported(string projectType)
         {
-            return Regex.IsMatch(projectType, "^[A-Za-z]+$") &&
-                   Enum.TryParse(projectType, ignoreCase: true, out ProjectType _);
+            return _projectQueryProvider.IsSupported(projectType);
         }
     }
 }
