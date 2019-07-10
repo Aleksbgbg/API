@@ -12,5 +12,15 @@
             return Regex.IsMatch(projectType, "^[A-Za-z]+$") &&
                    Enum.TryParse(projectType, ignoreCase: true, out ProjectType _);
         }
+
+        public FileTreeTemplate ProduceTemplateFor(string projectType, string projectName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string ReadFileContents(string projectType, FileTreeEntry file, string projectName)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
