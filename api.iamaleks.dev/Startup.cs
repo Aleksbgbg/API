@@ -12,12 +12,21 @@ namespace Api
 
     public class Startup
     {
+        private readonly IWebHostEnvironment _webHostEnvironment;
+
+        public Startup(IWebHostEnvironment webHostEnvironment)
+        {
+            _webHostEnvironment = webHostEnvironment;
+        }
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers()
                     .AddNewtonsoftJson();
 
             services.AddTransient<IProjectQueryProvider, ProjectQueryProvider>();
+            services.AddTransient<IWebRootFileProvider>(_ => new WebRootFileProvider(_webHostEnvironment.WebRootFileProvider));
+            services.AddTransient<IProjectTemplateProducer, ProjectTemplateProducer>();
 
             services.AddRouting(options => options.LowercaseUrls = true);
             services.AddMvc(options => options.Conventions.Add(new RouteTokenTransformerConvention(new SlugifyParameterTransformer())));

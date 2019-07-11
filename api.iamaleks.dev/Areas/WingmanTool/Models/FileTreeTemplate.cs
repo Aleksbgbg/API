@@ -1,12 +1,14 @@
 ﻿namespace Api.Areas.WingmanTool.Models
 {
+    using System.Collections.Generic;
+
     public class FileTreeTemplate
     {
-        public FileTreeTemplate(FileTreeEntry[] entries)
+        public FileTreeTemplate(IEnumerable<FileTreeEntry> entries)
         {
             Entries = entries;
         }
 
-        public FileTreeEntry[] Entries { get; }
+        public IEnumerable<FileTreeEntry> Entries { get; }
     }
 }
