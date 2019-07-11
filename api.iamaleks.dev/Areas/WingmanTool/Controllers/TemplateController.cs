@@ -1,5 +1,7 @@
 ﻿namespace Api.Areas.WingmanTool.Controllers
 {
+    using System.Threading.Tasks;
+
     using Api.Areas.Services;
     using Api.Areas.WingmanTool.Models;
 
@@ -31,10 +33,26 @@
         {
             if (!_projectQueryProvider.IsSupported(projectType))
             {
-                return BadRequest("Unsupported project type.");
+                return UnsupportedProjectType();
             }
 
             return _projectTemplateProducer.ProduceTemplateFor(projectType);
+        }
+
+        [HttpGet("File/{projectType}/{projectName}")]
+        public async Task<ActionResult<string>> RenderFile(string projectType, string projectName, string relativePath)
+        {
+            if (!_projectQueryProvider.IsSupported(projectType))
+            {
+                return UnsupportedProjectType();
+            }
+
+            return await _projectTemplateProducer.RenderFile(projectType, projectName, relativePath);
+        }
+
+        private ActionResult UnsupportedProjectType()
+        {
+            return BadRequest("Unsupported project type.");
         }
     }
 }
