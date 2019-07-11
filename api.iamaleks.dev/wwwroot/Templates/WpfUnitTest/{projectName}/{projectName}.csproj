@@ -2,7 +2,7 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net48</TargetFramework>
-    <RootNamespace>ProjectName</RootNamespace>
+    <RootNamespace>{projectName}</RootNamespace>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
   <ItemGroup>
