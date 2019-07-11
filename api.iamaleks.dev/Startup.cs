@@ -27,6 +27,7 @@ namespace Api
             services.AddTransient<IProjectQueryProvider, ProjectQueryProvider>();
             services.AddTransient<IWebRootFileProvider>(_ => new WebRootFileProvider(_webHostEnvironment.WebRootFileProvider));
             services.AddTransient<IProjectTemplateProducer, ProjectTemplateProducer>();
+            services.AddTransient<IGitFileProvider, GitFileProvider>();
 
             services.AddRouting(options => options.LowercaseUrls = true);
             services.AddMvc(options => options.Conventions.Add(new RouteTokenTransformerConvention(new SlugifyParameterTransformer())));
