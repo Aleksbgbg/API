@@ -26,15 +26,15 @@
             return _projectQueryProvider.IsSupported(projectType);
         }
 
-        [HttpGet("{projectType}/{projectName}")]
-        public ActionResult<FileTreeTemplate> FileTreeTemplate(string projectType, string projectName)
+        [HttpGet("{projectType}")]
+        public ActionResult<FileTreeTemplate> FileTreeTemplate(string projectType)
         {
             if (!_projectQueryProvider.IsSupported(projectType))
             {
                 return BadRequest("Unsupported project type.");
             }
 
-            return _projectTemplateProducer.ProduceTemplateFor(projectType, projectName);
+            return _projectTemplateProducer.ProduceTemplateFor(projectType);
         }
     }
 }

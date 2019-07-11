@@ -15,18 +15,15 @@
 
         private string _projectType;
 
-        private string _projectName;
-
         public ProjectTemplateProducer(IWebRootFileProvider webRootFileProvider)
         {
             _webRootFileProvider = webRootFileProvider;
         }
 
-        public FileTreeTemplate ProduceTemplateFor(string projectType, string projectName)
+        public FileTreeTemplate ProduceTemplateFor(string projectType)
         {
             _fileTreeEntries = new List<FileTreeEntry>();
             _projectType = projectType;
-            _projectName = projectName;
 
             PopulateFileTreeEntries();
 
@@ -42,18 +39,13 @@
             {
                 string entryRelativePath = Path.Combine(relativePath, fileSystemEntry.Name);
 
-                _fileTreeEntries.Add(new FileTreeEntry(ReplaceProjectTokens(entryRelativePath), fileSystemEntry.IsDirectory));
+                _fileTreeEntries.Add(new FileTreeEntry(entryRelativePath, fileSystemEntry.IsDirectory));
 
                 if (fileSystemEntry.IsDirectory)
                 {
                     PopulateFileTreeEntries(entryRelativePath);
                 }
             }
-        }
-
-        private string ReplaceProjectTokens(string filename)
-        {
-            return filename.Replace("{projectName}", _projectName);
         }
     }
 }

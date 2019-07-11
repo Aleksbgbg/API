@@ -4,6 +4,6 @@
 
     public interface IProjectTemplateProducer
     {
-        FileTreeTemplate ProduceTemplateFor(string projectType, string projectName);
+        FileTreeTemplate ProduceTemplateFor(string projectType);
     }
 }
