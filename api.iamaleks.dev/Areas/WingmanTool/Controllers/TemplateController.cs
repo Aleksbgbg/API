@@ -2,8 +2,8 @@
 {
     using System.Threading.Tasks;
 
-    using Api.Areas.Services;
     using Api.Areas.WingmanTool.Models;
+    using Api.Areas.WingmanTool.Services;
 
     using Microsoft.AspNetCore.Mvc;
 

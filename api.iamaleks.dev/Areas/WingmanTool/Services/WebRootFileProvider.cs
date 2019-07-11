@@ -1,4 +1,4 @@
-﻿namespace Api.Areas.Services
+﻿namespace Api.Areas.WingmanTool.Services
 {
     using Microsoft.Extensions.FileProviders;
     using Microsoft.Extensions.Primitives;

@@ -1,6 +1,6 @@
 namespace Api
 {
-    using Api.Areas.Services;
+    using Api.Areas.WingmanTool.Services;
     using Api.Infrastructure;
 
     using Microsoft.AspNetCore.Builder;

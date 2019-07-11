@@ -1,4 +1,4 @@
-﻿namespace Api.Areas.Services
+﻿namespace Api.Areas.WingmanTool.Services
 {
     using System;
     using System.Text.RegularExpressions;
