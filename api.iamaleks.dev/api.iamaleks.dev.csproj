@@ -7,36 +7,4 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0-preview4-19216-03" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc2" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="wwwroot\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Update="wwwroot\Templates\Wpf\App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Content>
-    <Content Update="wwwroot\Templates\Wpf\MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Content>
-    <Content Update="wwwroot\Templates\Wpf\{projectName}\{projectName}\App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Content>
-    <Content Update="wwwroot\Templates\Wpf\{projectName}\{projectName}\MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Content>
-    <Content Update="wwwroot\Templates\Wpf\{projectName}\{projectName}\Themes\Brushes.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Content>
-    <Content Update="wwwroot\Templates\Wpf\{projectName}\{projectName}\Themes\Images.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Content>
-    <Content Update="wwwroot\Templates\Wpf\{projectName}\{projectName}\Themes\Styles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Content>
-    <Content Update="wwwroot\Templates\Wpf\{projectName}\{projectName}\Views\MainView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Content>
-    <Content Update="wwwroot\Templates\Wpf\{projectName}\{projectName}\Views\ShellView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Content>
-  </ItemGroup>
 </Project>
