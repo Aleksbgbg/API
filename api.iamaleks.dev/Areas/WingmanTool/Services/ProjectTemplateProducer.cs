@@ -72,7 +72,7 @@
 
         private string FindTemplatePath(string relativePath)
         {
-            return Path.Combine("Templates", _projectType, relativePath);
+            return Path.Combine("WingmanTool", "Templates", _projectType, relativePath);
         }
 
         private async Task<string> ReadFile(string relativeFilePath)

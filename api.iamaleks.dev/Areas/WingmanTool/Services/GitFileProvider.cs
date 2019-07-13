@@ -24,7 +24,7 @@
 
         private async Task<string> ReadGitFile(string filename)
         {
-            await using Stream stream = _webRootFileProvider.GetFileInfo(Path.Combine("git", filename)).CreateReadStream();
+            await using Stream stream = _webRootFileProvider.GetFileInfo(Path.Combine("WingmanTool", "git", filename)).CreateReadStream();
             using StreamReader streamReader = new StreamReader(stream);
 
             return await streamReader.ReadToEndAsync();
