@@ -1,6 +1,6 @@
-﻿namespace {projectName}.Tests.ViewModels
+﻿namespace {projectNamespace}.Tests.ViewModels
 {
-    using {projectName}.ViewModels;
+    using {projectNamespace}.ViewModels;
 
     public class MainViewModelTests
     {

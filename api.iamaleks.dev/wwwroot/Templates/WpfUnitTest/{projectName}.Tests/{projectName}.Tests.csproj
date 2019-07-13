@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
-    <RootNamespace>{projectName}.Tests</RootNamespace>
+    <RootNamespace>{projectNamespace}.Tests</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Moq" Version="4.12.0" />

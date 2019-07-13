@@ -1,4 +1,4 @@
-﻿namespace {projectName}.ViewModels.Interfaces
+﻿namespace {projectNamespace}.ViewModels.Interfaces
 {
     using Caliburn.Micro;
 

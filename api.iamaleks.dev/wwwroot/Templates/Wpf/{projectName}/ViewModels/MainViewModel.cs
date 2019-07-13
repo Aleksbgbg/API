@@ -1,6 +1,6 @@
-﻿namespace {projectName}.ViewModels
+﻿namespace {projectNamespace}.ViewModels
 {
-    using {projectName}.ViewModels.Interfaces;
+    using {projectNamespace}.ViewModels.Interfaces;
 
     public class MainViewModel : ViewModelBase, IMainViewModel
     {

@@ -1,9 +1,9 @@
-﻿namespace {projectName}.Tests.ViewModels
+﻿namespace {projectNamespace}.Tests.ViewModels
 {
     using Moq;
 
-    using {projectName}.ViewModels;
-    using {projectName}.ViewModels.Interfaces;
+    using {projectNamespace}.ViewModels;
+    using {projectNamespace}.ViewModels.Interfaces;
 
     using Xunit;
 

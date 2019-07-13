@@ -1,8 +1,8 @@
-﻿namespace {projectName}.ViewModels
+﻿namespace {projectNamespace}.ViewModels
 {
     using Caliburn.Micro;
 
-    using {projectName}.ViewModels.Interfaces;
+    using {projectNamespace}.ViewModels.Interfaces;
 
     public abstract class ViewModelBase : Screen, IViewModelBase
     {

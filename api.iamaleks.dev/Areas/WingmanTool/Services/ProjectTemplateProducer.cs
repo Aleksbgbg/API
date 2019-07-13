@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Text;
+    using System.Text.RegularExpressions;
     using System.Threading.Tasks;
 
     using Api.Areas.WingmanTool.Models;
@@ -85,6 +86,7 @@
         private static StringBuilder ReplaceProjectTokens(StringBuilder fileContents, string projectName)
         {
             fileContents.Replace("{projectName}", projectName);
+            fileContents.Replace("{projectNamespace}", Regex.Replace(projectName, @"\s+", "."));
 
             return fileContents;
         }

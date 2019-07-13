@@ -1,4 +1,4 @@
-﻿namespace {projectName}.Views
+﻿namespace {projectNamespace}.Views
 {
     public partial class MainView
     {

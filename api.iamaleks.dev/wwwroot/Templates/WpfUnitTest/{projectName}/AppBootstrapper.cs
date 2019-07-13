@@ -1,7 +1,7 @@
-﻿namespace {projectName}
+﻿namespace {projectNamespace}
 {
-    using {projectName}.ViewModels.Interfaces;
-    using {projectName}.ViewModels;
+    using {projectNamespace}.ViewModels.Interfaces;
+    using {projectNamespace}.ViewModels;
 
     using Wingman.Bootstrapper;
     using Wingman.Container;
