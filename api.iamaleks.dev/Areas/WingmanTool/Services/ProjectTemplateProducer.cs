@@ -62,10 +62,12 @@
         private async Task<string> RenderFile(string projectName, string relativePath)
         {
             string fileTemplatePath = FindTemplatePath(relativePath);
-            StringBuilder fileContents = new StringBuilder(await ReadFile(fileTemplatePath));
+
+            string fileContentsString = await ReadFile(fileTemplatePath);
+            StringBuilder fileContents = new StringBuilder(fileContentsString);
 
             fileContents = ReplaceProjectTokens(fileContents, projectName);
-            fileContents = ReplaceGuidTokens(fileContents);
+            fileContents = ReplaceGuidTokens(fileContents, fileContentsString);
 
             return fileContents.ToString();
         }
@@ -91,11 +93,20 @@
             return fileContents;
         }
 
-        private StringBuilder ReplaceGuidTokens(StringBuilder fileContents)
+        private static StringBuilder ReplaceGuidTokens(StringBuilder fileContents, string fileContentsString)
         {
-            for (int guidIndex = 0; guidIndex < 5; ++guidIndex)
+            for (int guidIndex = 0; guidIndex < 10; ++guidIndex)
             {
-                fileContents.Replace($"$guid{guidIndex}$", Guid.NewGuid().ToString().ToUpperInvariant());
+                string guidSearchString = $"$guid{guidIndex}$";
+
+                if (fileContentsString.Contains(guidSearchString))
+                {
+                    fileContents.Replace(guidSearchString, Guid.NewGuid().ToString().ToUpperInvariant());
+                }
+                else
+                {
+                    break;
+                }
             }
 
             return fileContents;
