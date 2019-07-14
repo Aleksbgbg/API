@@ -3,6 +3,7 @@
     public enum ProjectType
     {
         Wpf,
-        WpfUnitTest
+        WpfUnitTest,
+        Cpp
     }
 }
