@@ -36,7 +36,9 @@
                 return UnsupportedProjectType();
             }
 
-            return _projectTemplateProducer.ProduceTemplateFor(projectType);
+            string projectTypeNormalized = _projectQueryProvider.NormalizeProjectTypeString(projectType);
+
+            return _projectTemplateProducer.ProduceTemplateFor(projectTypeNormalized);
         }
 
         [HttpGet("File/{projectType}/{projectName}")]
@@ -47,7 +49,9 @@
                 return UnsupportedProjectType();
             }
 
-            return await _projectTemplateProducer.RenderFile(projectType, projectName, relativePath);
+            string projectTypeNormalized = _projectQueryProvider.NormalizeProjectTypeString(projectType);
+
+            return await _projectTemplateProducer.RenderFile(projectTypeNormalized, projectName, relativePath);
         }
 
         private ActionResult UnsupportedProjectType()

@@ -12,5 +12,12 @@
             return Regex.IsMatch(projectType, "^[A-Za-z]+$") &&
                    Enum.TryParse(projectType, ignoreCase: true, out ProjectType _);
         }
+
+        public string NormalizeProjectTypeString(string projectType)
+        {
+            ProjectType projectTypeEnum = Enum.Parse<ProjectType>(projectType, ignoreCase: true);
+
+            return projectTypeEnum.ToString();
+        }
     }
 }
