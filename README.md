@@ -1,2 +1,2 @@
-# api.iamaleks.dev
-API subdomain server for iamaleks.dev.
+# API
+API server for various applications.
