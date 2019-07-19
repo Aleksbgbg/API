@@ -4,6 +4,7 @@
     {
         Wpf,
         WpfUnitTest,
-        Cpp
+        Cpp,
+        CppUnitTest
     }
 }
