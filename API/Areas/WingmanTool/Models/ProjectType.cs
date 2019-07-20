@@ -5,6 +5,8 @@
         Wpf,
         WpfUnitTest,
         Cpp,
-        CppUnitTest
+        CppUnitTest,
+        CsLib,
+        CsLibUnitTest
     }
 }
