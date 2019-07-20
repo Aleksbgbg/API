@@ -3,4 +3,5 @@
     <TargetFrameworks>netstandard2.0;net48;netcoreapp3.0</TargetFrameworks>
     <RootNamespace>Api.Lib</RootNamespace>
   </PropertyGroup>
+  <Import Project="..\API.Shared\API.Shared.projitems" Label="Shared" />
 </Project>

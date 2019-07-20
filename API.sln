@@ -9,7 +9,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.Lib", "API.Lib\API.Lib.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.Lib.Tests", "API.Lib.Tests\API.Lib.Tests.csproj", "{EC481332-B556-46D3-8104-6232DD0CDA2C}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "API.Shared", "API.Shared\API.Shared.shproj", "{BE8011D9-2E22-4B00-8283-A83CE08F506B}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		API.Shared\API.Shared.projitems*{be8011d9-2e22-4b00-8283-a83ce08f506b}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

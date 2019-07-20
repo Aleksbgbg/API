@@ -10,4 +10,5 @@
   <ItemGroup>
     <Folder Include="wwwroot\WingmanTool\Templates\CppUnitTest\" />
   </ItemGroup>
+  <Import Project="..\API.Shared\API.Shared.projitems" Label="Shared" />
 </Project>
