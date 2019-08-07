@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "API.ProjectGeneration": {
+      "commandName": "Project"
+    }
+  }
+}

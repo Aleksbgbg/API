@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.Lib.Tests", "API.Lib.Te
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "API.Shared", "API.Shared\API.Shared.shproj", "{BE8011D9-2E22-4B00-8283-A83CE08F506B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.ProjectGeneration", "API.ProjectGeneration\API.ProjectGeneration.csproj", "{462FBB19-1919-484A-AABF-7BE39942CC7F}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		API.Shared\API.Shared.projitems*{be8011d9-2e22-4b00-8283-a83ce08f506b}*SharedItemsImports = 13
@@ -32,6 +34,10 @@ Global
 		{EC481332-B556-46D3-8104-6232DD0CDA2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC481332-B556-46D3-8104-6232DD0CDA2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC481332-B556-46D3-8104-6232DD0CDA2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{462FBB19-1919-484A-AABF-7BE39942CC7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{462FBB19-1919-484A-AABF-7BE39942CC7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{462FBB19-1919-484A-AABF-7BE39942CC7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{462FBB19-1919-484A-AABF-7BE39942CC7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
