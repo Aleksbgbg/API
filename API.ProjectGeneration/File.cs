@@ -13,7 +13,7 @@
 
         public IFile OfType(FileType fileType)
         {
-            _fileSystemEntry.RelativePath += fileType.AsExtensionString();
+            _fileSystemEntry.AddExtension(fileType.AsExtensionString());
             return this;
         }
 

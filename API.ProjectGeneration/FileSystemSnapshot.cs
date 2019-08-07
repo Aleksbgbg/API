@@ -2,7 +2,6 @@
 {
     using System.Collections.Generic;
     using System.Diagnostics;
-    using System.IO;
 
     public class FileSystemSnapshot
     {
@@ -20,7 +19,8 @@
             Debug.Assert(parent.IsDirectory);
             Debug.Assert(_entries.Contains(parent));
 
-            entry.RelativePath = Path.Combine(parent.RelativePath, entry.RelativePath);
+            entry.AddParent(parent);
+
             _entries.Add(entry);
         }
     }
