@@ -2,32 +2,32 @@
 {
     public class CsharpProject : ICsharpProject, IRenderableProject
     {
-        private readonly string _name;
-
         private IRenderableProject _renderableProject;
 
         public CsharpProject(string name)
         {
-            _name = name;
+            Name = name;
         }
+
+        public string Name { get; }
 
         public IWpfProject UseWpf()
         {
-            WpfProject wpfProject = new WpfProject(_name);
+            WpfProject wpfProject = new WpfProject(Name);
             _renderableProject = wpfProject;
             return wpfProject;
         }
 
         public IConsoleProject UseConsole()
         {
-            ConsoleProject consoleProject = new ConsoleProject(_name);
+            ConsoleProject consoleProject = new ConsoleProject(Name);
             _renderableProject = consoleProject;
             return consoleProject;
         }
 
-        public FileSystemSnapshot Render()
+        public void Render(IFolder projectRoot)
         {
-            return _renderableProject.Render();
+            _renderableProject.Render(projectRoot);
         }
     }
 }

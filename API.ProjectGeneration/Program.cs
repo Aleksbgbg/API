@@ -12,7 +12,12 @@
                .UseConsole();
 
             sln.AddCsharpProject("Wpf Project")
-               .UseWpf();
+               .UseWpf()
+               .ConfigureProjectRoot(projectRoot =>
+               {
+                   projectRoot.AddFile("Techo")
+                              .OfType(FileType.Cs);
+               });
 
             FileSystemSnapshot render = sln.Render();
 

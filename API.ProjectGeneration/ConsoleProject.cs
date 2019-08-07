@@ -4,20 +4,24 @@
 
     public class ConsoleProject : RenderableProjectBase, IConsoleProject
     {
+        private Action<IFolder> _projectRootConfiguration;
+
         public ConsoleProject(string name) : base(name)
         {
         }
 
-        public IConsoleProject ConfigureFileSystem(Action<IFileSystem> configuration)
+        public IConsoleProject ConfigureProjectRoot(Action<IFolder> projectRootConfiguration)
         {
-            configuration(FileSystem);
+            _projectRootConfiguration = projectRootConfiguration;
             return this;
         }
 
-        private protected override void AddCustomFiles(IFileSystem fileSystem)
+        private protected override void AddCustomFiles(IFolder projectRoot)
         {
-            fileSystem.AddFile("Program")
-                      .OfType(FileType.Cs);
+            _projectRootConfiguration?.Invoke(projectRoot);
+
+            projectRoot.AddFile("Program")
+                       .OfType(FileType.Cs);
         }
     }
 }

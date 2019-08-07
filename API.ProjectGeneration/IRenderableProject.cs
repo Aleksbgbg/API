@@ -2,6 +2,8 @@
 {
     public interface IRenderableProject
     {
-        FileSystemSnapshot Render();
+        string Name { get; }
+
+        void Render(IFolder projectRoot);
     }
 }

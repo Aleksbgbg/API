@@ -2,30 +2,22 @@
 {
     public class RenderableProjectBase : IRenderableProject
     {
-        private readonly FileSystemSnapshot _systemSnapshot;
-
         public RenderableProjectBase(string name)
         {
             Name = name;
-            _systemSnapshot = new FileSystemSnapshot();
-            FileSystem = new FileSystem(name, _systemSnapshot);
         }
 
-        protected string Name { get; }
+        public string Name { get; }
 
-        protected FileSystem FileSystem { get; }
-
-        public FileSystemSnapshot Render()
+        public void Render(IFolder projectRoot)
         {
-            FileSystem.AddFile(Name)
-                      .OfType(FileType.Csproj);
+            projectRoot.AddFile(Name)
+                       .OfType(FileType.Csproj);
 
-            AddCustomFiles(FileSystem);
-
-            return _systemSnapshot;
+            AddCustomFiles(projectRoot);
         }
 
-        private protected virtual void AddCustomFiles(IFileSystem fileSystem)
+        private protected virtual void AddCustomFiles(IFolder projectRoot)
         {
         }
     }

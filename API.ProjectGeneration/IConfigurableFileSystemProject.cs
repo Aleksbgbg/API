@@ -4,6 +4,6 @@
 
     public interface IConfigurableFileSystemProject<T>
     {
-        T ConfigureFileSystem(Action<IFileSystem> configuration);
+        T ConfigureProjectRoot(Action<IFolder> projectRootConfiguration);
     }
 }

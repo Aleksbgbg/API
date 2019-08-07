@@ -4,27 +4,31 @@
 
     public class WpfProject : RenderableProjectBase, IWpfProject
     {
+        private Action<IFolder> _projectRootConfiguration;
+
         public WpfProject(string name) : base(name)
         {
         }
 
-        public IWpfProject ConfigureFileSystem(Action<IFileSystem> configuration)
+        public IWpfProject ConfigureProjectRoot(Action<IFolder> projectRootConfiguration)
         {
-            configuration(FileSystem);
+            _projectRootConfiguration = projectRootConfiguration;
             return this;
         }
 
-        private protected override void AddCustomFiles(IFileSystem fileSystem)
+        private protected override void AddCustomFiles(IFolder projectRoot)
         {
-            fileSystem.AddFile("AppBootstrapper")
-                      .OfType(FileType.Cs);
+            _projectRootConfiguration?.Invoke(projectRoot);
 
-            fileSystem.AddFile("App")
-                      .OfType(FileType.Xaml);
-            fileSystem.AddFile("App")
-                      .OfType(FileType.XamlCs);
+            projectRoot.AddFile("AppBootstrapper")
+                        .OfType(FileType.Cs);
 
-            IFolder views = fileSystem.AddFolder("Views");
+            projectRoot.AddFile("App")
+                        .OfType(FileType.Xaml);
+            projectRoot.AddFile("App")
+                        .OfType(FileType.XamlCs);
+
+            IFolder views = projectRoot.AddFolder("Views");
 
             views.AddFile("ShellView")
                  .OfType(FileType.Xaml);
@@ -36,7 +40,7 @@
             views.AddFile("MainView")
                  .OfType(FileType.XamlCs);
 
-            IFolder viewModels = fileSystem.AddFolder("ViewModels");
+            IFolder viewModels = projectRoot.AddFolder("ViewModels");
 
             viewModels.AddFile("ShellViewModel")
                       .OfType(FileType.Cs);
@@ -49,9 +53,9 @@
             viewModelInterfaces.AddFile("IMainViewModel")
                                .OfType(FileType.Cs);
 
-            fileSystem.AddFolder("Models");
+            projectRoot.AddFolder("Models");
 
-            IFolder themes = fileSystem.AddFolder("Themes");
+            IFolder themes = projectRoot.AddFolder("Themes");
 
             themes.AddFile("Brushes")
                   .OfType(FileType.Xaml);
@@ -60,9 +64,9 @@
             themes.AddFile("Styles")
                   .OfType(FileType.Xaml);
 
-            fileSystem.AddFolder("Services");
-            fileSystem.AddFolder("Helpers");
-            fileSystem.AddFolder("Converters");
+            projectRoot.AddFolder("Services");
+            projectRoot.AddFolder("Helpers");
+            projectRoot.AddFolder("Converters");
         }
     }
 }
