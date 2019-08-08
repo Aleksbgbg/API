@@ -5,11 +5,11 @@
     [AttributeUsage(AttributeTargets.Field)]
     public class FileExtensionAttribute : Attribute
     {
-        public FileExtensionAttribute(string extension)
+        public FileExtensionAttribute(string fileExtension)
         {
-            Extension = extension;
+            FileExtension = fileExtension;
         }
 
-        public string Extension { get; }
+        public string FileExtension { get; }
     }
 }
