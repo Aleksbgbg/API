@@ -11,7 +11,7 @@ namespace API.ProjectGeneration
         [BuildArchitectures(BuildArchitecture.AnyCPU)]
         [FileExtension("csproj")]
         Csharp,
-        [BuildArchitectures(BuildArchitecture.x86, BuildArchitecture.x64)]
+        [BuildArchitectures(BuildArchitecture.x64, BuildArchitecture.x86)]
         [FileExtension("vcxproj")]
         Cpp
     }

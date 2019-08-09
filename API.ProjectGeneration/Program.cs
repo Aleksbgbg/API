@@ -19,12 +19,18 @@
                               .OfType(FileType.Cs);
                });
 
+            string slns = new SolutionFileRenderer(new SolutionTemplateReader()).Render(new Solution(new Project[] { new Project("Techo", ProjectType.Csharp), new Project("CppProj", ProjectType.Cpp) }));
+
+
+
             FileSystemSnapshot render = sln.Render();
 
             foreach (FileSystemEntry fileSystemEntry in render.Entries)
             {
                 Console.WriteLine("{0} {1}", fileSystemEntry.IsDirectory ? "DIR " : "FILE", fileSystemEntry.RelativePath);
             }
+
+            Console.WriteLine(slns);
         }
     }
 }

@@ -8,8 +8,8 @@ namespace API.ProjectGeneration
 {
     public class SerializeableSolution
     {
-        public IEnumerable<Project> Projects { get; set; }
+        public IEnumerable<ProjectSerializable> Projects { get; set; }
 
-        public IEnumerable<GlobalSection> Sections { get; set; }
+        public GlobalSection[] Sections { get; set; }
     }
 }

@@ -8,22 +8,21 @@ namespace API.ProjectGeneration
 {
     public class ConfigurationSerializeable : ISerializeable
     {
-        private readonly BuildMode _buildMode;
+        public BuildMode Mode { get; }
 
-        private readonly BuildArchitecture _buildArchitecture;
+        public BuildArchitecture Architecture { get; }
 
         public ConfigurationSerializeable(BuildMode buildMode, BuildArchitecture buildArchitecture)
         {
-            _buildMode = buildMode;
-            _buildArchitecture = buildArchitecture;
+            Mode = buildMode;
+            Architecture = buildArchitecture;
         }
 
         public StringBuilder Serialize(StringBuilder into)
         {
-            into.AppendFormat("{0}|{1}",
-                              _buildMode.ToString(),
-                              _buildArchitecture.GetAttribute<ToStringAttribute>()
-                                                .StringRepresentation);
+            into.AppendFormat("{0}|{1} = {0}|{1}",
+                              Mode,
+                              Architecture.AsString());
 
             return into;
         }

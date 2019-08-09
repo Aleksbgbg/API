@@ -18,6 +18,6 @@ namespace API.ProjectGeneration
 
         public SolutionRelativePosition Position { get; }
 
-        public SectionEntry[] Entries { get; set; }
+        public ISerializeable[] Entries { get; set; }
     }
 }

@@ -17,5 +17,11 @@ namespace API.ProjectGeneration
                             .Cast<T>()
                             .Single();
         }
+
+        public static string AsString(this Enum enumValue)
+        {
+            return enumValue.GetAttribute<ToStringAttribute>()
+                            .StringRepresentation;
+        }
     }
 }

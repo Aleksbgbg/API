@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace API.ProjectGeneration
 {
-    public enum TemplateType
+    public enum BuildEntryType
     {
-        SolutionHeader
+        [ToString("ActiveCfg")]
+        ActiveCfg,
+        [ToString("Build.0")]
+        Build0
     }
 }
