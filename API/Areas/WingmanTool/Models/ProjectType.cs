@@ -7,6 +7,7 @@
         Cpp,
         CppUnitTest,
         CsLib,
-        CsLibUnitTest
+        CsLibUnitTest,
+        CsAspNetCoreVue
     }
 }
