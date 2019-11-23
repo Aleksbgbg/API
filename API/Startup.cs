@@ -25,7 +25,7 @@ namespace Api
                     .AddNewtonsoftJson();
 
             services.AddTransient<IProjectQueryProvider, ProjectQueryProvider>();
-            services.AddTransient<IWebRootFileProvider>(_ => new WebRootFileProvider(new PhysicalFileProviderAdapter(_webHostEnvironment.WebRootPath)));
+            services.AddTransient<IWebRootFileProvider>(_ => new WebRootFileProvider(new TemplateFileProvider(_webHostEnvironment.WebRootPath)));
             services.AddTransient<IProjectTemplateProducer, ProjectTemplateProducer>();
             services.AddTransient<IGitFileProvider, GitFileProvider>();
 
