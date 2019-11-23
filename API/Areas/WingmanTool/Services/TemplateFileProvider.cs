@@ -32,7 +32,7 @@
         /// </summary>
         /// <param name="root">The root directory. This should be an absolute path.</param>
         public TemplateFileProvider(string root)
-            : this(root, ExclusionFilters.Sensitive)
+            : this(root, ExclusionFilters.None)
         {
         }
 
