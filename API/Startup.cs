@@ -45,13 +45,17 @@ namespace Api
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-
-                app.UseSwagger();
-                app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "iamaleks.dev API V1"));
             }
 
             app.UseRouting();
             app.UseEndpoints(endpoints => endpoints.MapControllers());
+
+            app.UseSwagger();
+            app.UseSwaggerUI(options =>
+            {
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "iamaleks.dev API V1");
+                options.RoutePrefix = "";
+            });
         }
     }
 }
