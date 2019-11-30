@@ -38,6 +38,8 @@ namespace {projectName}
                     .AddEntityFrameworkStores<AppDbContext>()
                     .AddDefaultTokenProviders();
 
+            services.Configure<ApiBehaviorOptions>(options => options.SuppressModelStateInvalidFilter = true);
+
             services.AddControllers(options => options.Conventions.Add(new RouteTokenTransformerConvention(new SlugifyParameterTransformer())));
             services.AddSpaStaticFiles(configuration => configuration.RootPath = "Client/dist");
 
